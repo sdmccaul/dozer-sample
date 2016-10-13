@@ -19,9 +19,9 @@ def handle_rest_error(error):
 
 
 ## API for FIS faculty data
-from resources.fisFaculty import fisFaculty
+from resources.fisfeed import fisFaculty
 
-@app.route('/rabdata/fisfaculty/', methods=['GET'])
+@app.route('/fisfaculty/', methods=['GET'])
 def index():
 	# Working for single strings
 	# problems for dates, multival?
@@ -36,7 +36,7 @@ def index():
 	return json.dumps([ fac.to_dict()
 							for fac in allFisFaculty])
 
-@app.route('/rabdata/fisfaculty/<rabid>', methods=['GET'])
+@app.route('/fisfaculty/<rabid>', methods=['GET'])
 def retrieve(rabid):
 	try:
 		fisfac = fisFaculty.find(rabid=rabid)
@@ -47,7 +47,7 @@ def retrieve(rabid):
 	resp.headers['ETag'] = fisfac.etag
 	return resp
 
-@app.route('/rabdata/fisfaculty/', methods=['POST'])
+@app.route('/fisfaculty/', methods=['POST'])
 def create():
 	try:
 		fisfac = fisFaculty.create(
@@ -60,7 +60,7 @@ def create():
 	resp.headers['ETag'] = fisfac.etag
 	return resp
 
-@app.route('/rabdata/fisfaculty/<rabid>', methods=['PUT'])
+@app.route('/fisfaculty/<rabid>', methods=['PUT'])
 def replace(rabid):
 	try:
 		fisfac = fisFaculty.find(rabid=rabid)
@@ -80,7 +80,7 @@ def replace(rabid):
 		raise RESTError('Data modified on server',
 							status_code=409, payload=fisfac.to_dict())
 
-@app.route('/rabdata/fisfaculty/<rabid>', methods=['DELETE'])
+@app.route('/fisfaculty/<rabid>', methods=['DELETE'])
 def destroy(rabid):
 	try:
 		fisfac = fisFaculty.find(rabid=rabid)
