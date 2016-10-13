@@ -1,12 +1,17 @@
 #!flask/bin/python
-import context
-
 from flask import Flask, jsonify, abort, request, make_response, url_for
 from flask.ext.cors import CORS
 import json
+import os
 
 app = Flask(__name__)
+app.config.from_pyfile('config/api.cfg')
 CORS(app)
+
+os.environ['QUERY_URL'] = app.config['QUERY_URL']
+os.environ['UPDATE_URL'] = app.config['UPDATE_URL']
+os.environ['UPDATE_EMAIL'] = app.config['UPDATE_EMAIL']
+os.environ['UPDATE_PASS'] = app.config['UPDATE_PASS']
 
 from resources.errors import ValidationError, \
 	AliasError, RESTError
@@ -99,4 +104,4 @@ def destroy(rabid):
 							status_code=409, payload=fisfac.to_dict())
 
 if __name__ == '__main__':
-	app.run(host='0.0.0.0', port=8000, debug=True)
+	app.run(host='0.0.0.0')
