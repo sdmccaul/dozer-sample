@@ -25,7 +25,7 @@ def handle_rest_error(error):
 from resources.fisfeed import fisFaculty
 
 @app.route('/fisfaculty/', methods=['GET'])
-def index():
+def index_faculty():
 	# Working for single strings
 	# problems for dates, multival?
 	params = { k: [v] for k, v in request.args.items() }
@@ -40,7 +40,7 @@ def index():
 							for fac in allFisFaculty])
 
 @app.route('/fisfaculty/<rabid>', methods=['GET'])
-def retrieve(rabid):
+def retrieve_faculty(rabid):
 	try:
 		fisfac = fisFaculty.find(rabid=rabid)
 	except:
@@ -51,7 +51,7 @@ def retrieve(rabid):
 	return resp
 
 @app.route('/fisfaculty/', methods=['POST'])
-def create():
+def create_faculty():
 	try:
 		fisfac = fisFaculty.create(
 					data=request.get_json())
@@ -64,7 +64,7 @@ def create():
 	return resp
 
 @app.route('/fisfaculty/<rabid>', methods=['PUT'])
-def replace(rabid):
+def replace_faculty(rabid):
 	try:
 		fisfac = fisFaculty.find(rabid=rabid)
 	except:
@@ -84,7 +84,7 @@ def replace(rabid):
 							status_code=409, payload=fisfac.to_dict())
 
 @app.route('/fisfaculty/<rabid>', methods=['DELETE'])
-def destroy(rabid):
+def destroy_faculty(rabid):
 	try:
 		fisfac = fisFaculty.find(rabid=rabid)
 	except:
@@ -106,7 +106,7 @@ def destroy(rabid):
 from resources.fisfeed import fisDegrees
 
 @app.route('/fisdegrees/', methods=['GET'])
-def index():
+def index_degrees():
 	# Working for single strings
 	# problems for dates, multival?
 	params = { k: [v] for k, v in request.args.items() }
@@ -121,7 +121,7 @@ def index():
 							for degree in allFisDegrees])
 
 @app.route('/fisdegrees/<rabid>', methods=['GET'])
-def retrieve(rabid):
+def retrieve_degrees(rabid):
 	try:
 		fisdegree = fisDegrees.find(rabid=rabid)
 	except:
@@ -132,7 +132,7 @@ def retrieve(rabid):
 	return resp
 
 @app.route('/fisdegrees/', methods=['POST'])
-def create():
+def create_degrees():
 	try:
 		fisdegree = fisDegrees.create(
 					data=request.get_json())
@@ -145,7 +145,7 @@ def create():
 	return resp
 
 @app.route('/fisdegrees/<rabid>', methods=['PUT'])
-def replace(rabid):
+def replace_degrees(rabid):
 	try:
 		fisdegree = fisDegrees.find(rabid=rabid)
 	except:
@@ -166,7 +166,7 @@ def replace(rabid):
 						status_code=409, payload=fisdegree.to_dict())
 
 @app.route('/fisdegrees/<rabid>', methods=['DELETE'])
-def destroy(rabid):
+def destroy_degrees(rabid):
 	try:
 		fisdegree = fisDegrees.find(rabid=rabid)
 	except:
