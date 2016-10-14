@@ -63,17 +63,17 @@ fisDegrees = Collection(
 fisDegrees.register_endpoint(spq)
 
 #rename presets as only; add parameter for allowed
-fisDegreeOrgsSchema = Schema({
+fisOrgsSchema = Schema({
 	'class'		: 	Attribute(rdf.rdfType, required=True,
 						only=[ foaf.Organization ]),
 	'org'	:	Attribute(rdfs.label, required=True, unique=True),
 })
 
 # rename namespace; "resource namespace"?
-fisDegreeOrgs = Collection(
-				name='fisDegreeOrgs',
-				schema=fisDegreeOrgsSchema,
-				named_graph='http://vivo.brown.edu/data/fis-degrees',
+fisOrgs = Collection(
+				name='fisOrgs',
+				schema=fisOrgsSchema,
+				named_graph='http://vivo.brown.edu/data/fis-orgs',
 				namespace='http://vivo.brown.edu/individual/',
 				prefix='faculty')
-fisDegreeOrgs.register_endpoint(spq)
+fisOrgs.register_endpoint(spq)

@@ -185,5 +185,87 @@ def destroy_degrees(rabid):
 						payload=fisdegree.to_dict())
 
 
+## API for FIS Organizations data
+from resources.fisfeed import fisOrgs
+
+@app.route('/fisorgs/', methods=['GET'])
+def index_fis_orgs():
+	# Working for single strings
+	# problems for dates, multival?
+	params = { k: [v] for k, v in request.args.items() }
+	try:
+		allFisOrgs = fisOrgs.search(params=params)
+	except AliasError as e:
+		raise RESTError('Bad parameter',
+			status_code=400, payload=e.msg)
+	except:
+		raise RESTError('Resource not found', status_code=404)
+	return json.dumps([ fisorg.to_dict()
+							for fisorg in allFisOrgs])
+
+@app.route('/fisorgs/<rabid>', methods=['GET'])
+def retrieve_fis_orgs(rabid):
+	try:
+		fisorg = fisOrgs.find(rabid=rabid)
+	except:
+		raise RESTError('Resource not found', status_code=404)
+	resp = make_response(
+				json.dumps(fisorg.to_dict()))
+	resp.headers['ETag'] = fisorg.etag
+	return resp
+
+@app.route('/fisorgs/', methods=['POST'])
+def create_fis_orgs():
+	try:
+		fisorg = fisOrgs.create(
+					data=request.get_json())
+	except (AliasError, ValidationError) as e:
+		raise RESTError('Bad data',
+					status_code=400, payload=e.msg) 
+	resp = make_response(
+				json.dumps(fisorg.to_dict()))
+	resp.headers['ETag'] = fisorg.etag
+	return resp
+
+@app.route('/fisorgs/<rabid>', methods=['PUT'])
+def replace_fis_orgs(rabid):
+	try:
+		fisorg = fisOrgs.find(rabid=rabid)
+	except:
+		raise RESTError('Resource not found', status_code=404)
+	if fisorg.etag == request.headers.get("If-Match"):
+		try:
+			updated = fisOrgs.overwrite(
+						fisorg, request.get_json())
+		except (AliasError, ValidationError) as e:
+			raise RESTError('Validation',
+				status_code=400, payload=e.msg)
+		resp = make_response(
+				json.dumps(updated.to_dict()))
+		resp.headers['ETag'] = updated.etag
+		return resp
+	else:
+		raise RESTError('Data modified on server',
+						status_code=409, payload=fisorg.to_dict())
+
+@app.route('/fisorgs/<rabid>', methods=['DELETE'])
+def destroy_fis_orgs(rabid):
+	try:
+		fisorg = fisOrgs.find(rabid=rabid)
+	except:
+		raise RESTError('No resource to delete', status_code=410)
+	if fisorg.etag == request.headers.get("If-Match"):
+		try:
+			fisOrgs.remove(fisorg)
+			resp = make_response('', 204)
+			return resp
+		except (AliasError, ValidationError) as e:
+			raise RESTError('Validation',
+				status_code=400, payload=e.msg)
+	else:
+		raise RESTError('Data modified on server',
+						status_code=409,
+						payload=fisorg.to_dict())
+
 if __name__ == '__main__':
 	app.run(host='0.0.0.0')
