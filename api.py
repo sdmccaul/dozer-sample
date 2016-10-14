@@ -101,5 +101,89 @@ def destroy(rabid):
 		raise RESTError('Data modified on server',
 							status_code=409, payload=fisfac.to_dict())
 
+
+## API for FIS Degrees data
+from resources.fisfeed import fisDegrees
+
+@app.route('/fisdegrees/', methods=['GET'])
+def index():
+	# Working for single strings
+	# problems for dates, multival?
+	params = { k: [v] for k, v in request.args.items() }
+	try:
+		allFisDegrees = fisDegrees.search(params=params)
+	except AliasError as e:
+		raise RESTError('Bad parameter',
+			status_code=400, payload=e.msg)
+	except:
+		raise RESTError('Resource not found', status_code=404)
+	return json.dumps([ degree.to_dict()
+							for degree in allFisDegrees])
+
+@app.route('/fisdegrees/<rabid>', methods=['GET'])
+def retrieve(rabid):
+	try:
+		fisdegree = fisDegrees.find(rabid=rabid)
+	except:
+		raise RESTError('Resource not found', status_code=404)
+	resp = make_response(
+				json.dumps(fisdegree.to_dict()))
+	resp.headers['ETag'] = fisdegree.etag
+	return resp
+
+@app.route('/fisdegrees/', methods=['POST'])
+def create():
+	try:
+		fisdegree = fisDegrees.create(
+					data=request.get_json())
+	except (AliasError, ValidationError) as e:
+		raise RESTError('Bad data',
+					status_code=400, payload=e.msg) 
+	resp = make_response(
+				json.dumps(fisdegree.to_dict()))
+	resp.headers['ETag'] = fisdegree.etag
+	return resp
+
+@app.route('/fisdegrees/<rabid>', methods=['PUT'])
+def replace(rabid):
+	try:
+		fisdegree = fisDegrees.find(rabid=rabid)
+	except:
+		raise RESTError('Resource not found', status_code=404)
+	if fisdegree.etag == request.headers.get("If-Match"):
+		try:
+			updated = fisDegrees.overwrite(
+						fisdegree, request.get_json())
+		except (AliasError, ValidationError) as e:
+			raise RESTError('Validation',
+				status_code=400, payload=e.msg)
+		resp = make_response(
+				json.dumps(updated.to_dict()))
+		resp.headers['ETag'] = updated.etag
+		return resp
+	else:
+		raise RESTError('Data modified on server',
+						status_code=409, payload=fisdegree.to_dict())
+
+@app.route('/fisdegrees/<rabid>', methods=['DELETE'])
+def destroy(rabid):
+	try:
+		fisdegree = fisDegrees.find(rabid=rabid)
+	except:
+		raise RESTError('No resource to delete', status_code=410)
+	if fisdegree.etag == request.headers.get("If-Match"):
+		try:
+			fisDegrees.remove(fisdegree)
+			resp = make_response('', 204)
+			return resp
+		except (AliasError, ValidationError) as e:
+			raise RESTError('Validation',
+				status_code=400, payload=e.msg)
+	else:
+		raise RESTError('Data modified on server',
+						status_code=409,
+						payload=fisdegree.to_dict())
+
+
 if __name__ == '__main__':
 	app.run(host='0.0.0.0')
