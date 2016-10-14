@@ -1,12 +1,10 @@
 #!flask/bin/python
 from flask import Flask, jsonify, abort, request, make_response, url_for
-from flask.ext.cors import CORS
 import json
 import os
 
 app = Flask(__name__)
 app.config.from_pyfile('config/api.cfg')
-CORS(app)
 
 os.environ['QUERY_URL'] = app.config['QUERY_URL']
 os.environ['UPDATE_URL'] = app.config['UPDATE_URL']
