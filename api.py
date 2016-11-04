@@ -22,6 +22,24 @@ def handle_rest_error(error):
     response.status_code = error.status_code
     return response
 
+import requests
+
+@app.route('/search/<search_term>', methods=['GET'])
+def search(search_term):
+	solr_url = 'http://localhost:8080/rabsolr/'
+	solr_field_title = 'acNameStemmed:'
+	solr_field_type = 'type:http://vivo.brown.edu/ontology/vivo-brown/ResearchArea'
+	endpoint = solr_url + 'select/'
+	query = solr_field_title + search_term + " " + solr_field_type
+	payload = { "q" : query,
+				"fl": "URI,nameRaw",
+				"wt": "json",
+				"rows": "30" }
+	print payload
+	solr_resp = requests.get(endpoint, params=payload)
+	resp = make_response(
+				json.dumps(solr_resp.json()))
+	return resp
 
 ## API for FIS faculty data
 from resources.fisfeed import fisFaculty
