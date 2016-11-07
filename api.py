@@ -326,8 +326,22 @@ def retrieve_vocab_term(rabid):
 		term = Terms.find(rabid=rabid)
 	except:
 		raise RESTError('Resource not found', status_code=404)
-	resp = make_response(
-				json.dumps(term.to_dict()))
+	data = term.to_dict()
+	if request.args.get('neighbors'):
+		node = data.keys()[0]
+		data[node]['neighbors'] = []
+		neighbors = ['related','narrower','broader']
+		attrs = data.values()[0]
+		for att in attrs:
+			if att in neighbors:
+				for val in attrs[att]:
+					nrabid = val[len('http://vivo.brown.edu/individual/'):]
+					try:
+						nbor = Terms.find(rabid=nrabid)
+					except:
+						raise RESTError('Resource not found', status_code=404)
+					data[node]['neighbors'].append(nbor.to_dict())
+	resp = make_response(json.dumps(data))
 	resp.headers['ETag'] = term.etag
 	return resp
 
@@ -385,4 +399,4 @@ def destroy_vocab_term(rabid):
 						payload=term.to_dict())
 
 if __name__ == '__main__':
-	app.run(host='0.0.0.0')
+	app.run(host='0.0.0.0',port=8000)
