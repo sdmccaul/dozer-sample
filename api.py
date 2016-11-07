@@ -24,21 +24,34 @@ def handle_rest_error(error):
 
 import requests
 
-@app.route('/search/<search_term>', methods=['GET'])
-def search(search_term):
-	solr_url = 'http://localhost:8080/rabsolr/'
+@app.route('/search/', methods=['GET'])
+def solr_search():
+	solr_endpoint = 'http://localhost:8080/rabsolr/select/'
+	type_map = {
+		'vocab' : 'type:http://vivo.brown.edu/ontology/vivo-brown/ResearchArea'
+	}
+
+	type_param = request.args.get('type')
+	query_param = request.args.get('query')
+
 	solr_field_title = 'acNameStemmed:'
-	solr_field_type = 'type:http://vivo.brown.edu/ontology/vivo-brown/ResearchArea'
-	endpoint = solr_url + 'select/'
-	query = solr_field_title + search_term + " " + solr_field_type
+	solr_field_type = type_map[type_param]
+	query = solr_field_title + query_param + " " + solr_field_type
+	
 	payload = { "q" : query,
 				"fl": "URI,nameRaw",
 				"wt": "json",
 				"rows": "30" }
-	print payload
-	solr_resp = requests.get(endpoint, params=payload)
+	solr_resp = requests.get(solr_endpoint, params=payload)
+	solr_data = solr_resp.json()
+	reply = []
+	if solr_data['response']['numFound'] > 0:
+		for doc in solr_data['response']['docs']:
+			res = {}
+			res[doc['URI']] = doc['nameRaw'][0]
+			reply.append(res)
 	resp = make_response(
-				json.dumps(solr_resp.json()))
+				json.dumps(reply))
 	return resp
 
 ## API for FIS faculty data
@@ -370,4 +383,4 @@ def destroy_vocab_term(rabid):
 						payload=term.to_dict())
 
 if __name__ == '__main__':
-	app.run(host='0.0.0.0',port=8000)
+	app.run(host='0.0.0.0')
