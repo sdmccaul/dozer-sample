@@ -13,6 +13,8 @@ os.environ['UPDATE_URL'] = app.config['UPDATE_URL']
 os.environ['UPDATE_EMAIL'] = app.config['UPDATE_EMAIL']
 os.environ['UPDATE_PASS'] = app.config['UPDATE_PASS']
 
+solr_url = app.config['SEARCH_URL']
+
 from resources.errors import ValidationError, \
 	AliasError, RESTError
 
@@ -26,7 +28,7 @@ import requests
 
 @app.route('/search/', methods=['GET'])
 def solr_search():
-	solr_endpoint = 'http://localhost:8080/rabsolr/select/'
+	solr_endpoint = solr_url + 'select/'
 	type_map = {
 		'vocab' : 'type:http://vivo.brown.edu/ontology/vivo-brown/ResearchArea'
 	}
