@@ -5,7 +5,7 @@ import json
 import os
 
 app = Flask(__name__)
-CORS(app, expose_headers='ETag')
+CORS(app, expose_headers='ETag', supports_credentials=True)
 app.config.from_pyfile('config/api.cfg')
 
 os.environ['QUERY_URL'] = app.config['QUERY_URL']
@@ -326,22 +326,8 @@ def retrieve_vocab_term(rabid):
 		term = Terms.find(rabid=rabid)
 	except:
 		raise RESTError('Resource not found', status_code=404)
-	data = term.to_dict()
-	if request.args.get('neighbors'):
-		node = data.keys()[0]
-		data[node]['neighbors'] = []
-		neighbors = ['related','narrower','broader']
-		attrs = data.values()[0]
-		for att in attrs:
-			if att in neighbors:
-				for val in attrs[att]:
-					nrabid = val[len('http://vivo.brown.edu/individual/'):]
-					try:
-						nbor = Terms.find(rabid=nrabid)
-					except:
-						raise RESTError('Resource not found', status_code=404)
-					data[node]['neighbors'].append(nbor.to_dict())
-	resp = make_response(json.dumps(data))
+	resp = make_response(
+				json.dumps(term.to_dict()))
 	resp.headers['ETag'] = term.etag
 	return resp
 
