@@ -50,7 +50,7 @@ def solr_search():
 	if solr_data['response']['numFound'] > 0:
 		for doc in solr_data['response']['docs']:
 			res = {}
-			res[doc['URI']] = doc['nameRaw'][0]
+			res[doc['URI']] = { 'label': [ doc['nameRaw'][0] ] }
 			reply.append(res)
 	resp = make_response(
 				json.dumps(reply))
