@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?><rdf:RDF
+    xmlns:vitro="http://vitro.mannlib.cornell.edu/ns/vitro/0.7#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:bdisplay="http://vivo.brown.edu/ontology/display#"
+    xmlns:afn="http://jena.hpl.hp.com/ARQ/function#"
+    xmlns:bcite="http://vivo.brown.edu/ontology/citation#"
+    xmlns:bharvest="http://vivo.brown.edu/ontology/harvest#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:blocal="http://vivo.brown.edu/ontology/vivo-brown/"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:bprofile="http://vivo.brown.edu/ontology/profile#"
+    xmlns:vivo="http://vivoweb.org/ontology/core#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#" > 
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#meshMajorTopic">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">MeSH Major Topic</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#otherTerm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Other Term</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#editor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Editor</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#isbn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">ISBN</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#locationID">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Location ID</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#publicationType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Publication Type</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#affiliation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Affiliation</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#authorLastName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Author - Last</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#transliteratedTitle">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Transliterated Title</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#book">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Book</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#title">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Title</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#authorIdentifier">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Author - Identifier</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#meshDate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Date - MeSH</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#allFields">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">All Fields</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#filterParam">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Filter</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#grantNumber">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Grant Number</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#authorFirstName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Author - First</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#pharmacologicalAction">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Pharmacological Action</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#supplementaryConcept">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Supplementary Concept</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#meshSubHeading">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">MeSH Subheading</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#corporateAuthor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Author - Corporate</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#secondarySourceID">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Secondary Source ID</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#entrezDate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Date - Entrez</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#volume">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Volume</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#authorFullName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Author - Full</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#language">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Language</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#investigator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Investigator</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#completionDate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Date - Completion</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#hasHarvestProcess">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestUser"/>
+    <rdfs:label xml:lang="en-US">uses process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label xml:lang="en-US">Brown Harvest</rdfs:label>
+    <vitro:ontologyPrefixAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bharvest</vitro:ontologyPrefixAnnot>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#hasUser">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">has user</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#HarvestUser">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en-US">Harvest User</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#modificationDate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Date - Modification</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#creationDate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Date - Create</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#subjectPersonalName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Subject - Personal Name</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#publicationDate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Date - Publication</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#titleAbstract">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Title/Abstract</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#issue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Issue</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#HarvestProcess">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en-US">Harvest Process</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#journal">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Journal</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#publisher">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Publisher</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#textWord">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Text Word</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#meshTerms">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">MeSH Terms</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#investigatorFullName">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Investigator - Full</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#ecrnNumber">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">EC/RN Number</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#pagination">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">Pagination</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+</rdf:RDF>
