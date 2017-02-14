@@ -55,7 +55,6 @@ citationSchema = Schema({
 	'patent_number'				:	Attribute(bcite.patentNumber, optional=True),
 	'pmcid'						:	Attribute(bcite.pmcid, optional=True),
 	'pmid'						:	Attribute(bcite.pmid, optional=True),
-	'published_in'				:	Attribute(bcite.publishedIn, optional=True),
 	'review_of'					:	Attribute(bcite.reviewOf, optional=True),
 	'title'						:	Attribute(bcite.title, optional=True),
 	'url'						:	Attribute(bcite.url, optional=True),

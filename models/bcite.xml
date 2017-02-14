@@ -13,6 +13,16 @@
     xmlns:vivo="http://vivoweb.org/ontology/core#"
     xmlns:foaf="http://xmlns.com/foaf/0.1/"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#" > 
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/citation#hasAuthority">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/citation#Citation"/>
+    <rdfs:label xml:lang="en-US">has authority</rdfs:label>
+    <rdfs:range rdf:resource="http://vivo.brown.edu/ontology/citation#Authority"/>
+    <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">40</vitro:displayRankAnnot>
+    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivo.brown.edu/individual/vitroPropertyGroupCitationInformation"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://vivo.brown.edu/ontology/citation#contributorTo">
     <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/citation#Contributor"/>
     <vitro:selectFromExistingAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</vitro:selectFromExistingAnnot>
@@ -46,6 +56,16 @@
     <vitro:inClassGroup rdf:resource="http://vivo.brown.edu/individual/vitroClassGroupcitations"/>
     <rdfs:label xml:lang="en-US">Review</rdfs:label>
   </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/citation#chapter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/citation#Citation"/>
+    <rdfs:label xml:lang="en-US">chapter</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">20</vitro:displayRankAnnot>
+    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivo.brown.edu/individual/vitroPropertyGroupCitationInformation"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://vivo.brown.edu/ontology/citation#Abstract">
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
@@ -64,6 +84,16 @@
     <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/citation#Citation"/>
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</vitro:displayRankAnnot>
     <rdfs:label xml:lang="en-US">author list</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/citation#patentNumber">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/citation#Citation"/>
+    <rdfs:label xml:lang="en-US">patent number</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">40</vitro:displayRankAnnot>
+    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivo.brown.edu/individual/vitroPropertyGroupCitationInformation"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivo.brown.edu/ontology/citation#Article">
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
@@ -92,6 +122,16 @@
     <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/citation#Citation"/>
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">40</vitro:displayRankAnnot>
     <rdfs:label xml:lang="en-US">doi</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/citation#Authority">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Authority</rdfs:label>
+    <vitro:inClassGroup rdf:resource="http://vivo.brown.edu/individual/vitroClassGroupcitations"/>
+    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayLimitAnnot>
+    <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayRankAnnot>
+    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:hiddenFromPublishBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivo.brown.edu/ontology/citation#issn">
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
@@ -144,6 +184,16 @@
     <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/citation#Citation"/>
     <rdfs:label xml:lang="en-US">location of conference</rdfs:label>
   </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/citation#reviewOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/citation#Citation"/>
+    <rdfs:label xml:lang="en-US">review of</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">20</vitro:displayRankAnnot>
+    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivo.brown.edu/individual/vitroPropertyGroupCitationInformation"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://vivo.brown.edu/ontology/citation#editorList">
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
@@ -177,6 +227,26 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
     <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CV ID</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/citation#hasAssignee">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/citation#Citation"/>
+    <rdfs:label xml:lang="en-US">has assignee</rdfs:label>
+    <rdfs:range rdf:resource="http://vivo.brown.edu/ontology/citation#Assignee"/>
+    <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">20</vitro:displayRankAnnot>
+    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivo.brown.edu/individual/vitroPropertyGroupCitationInformation"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/citation#hasCountry">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/citation#Citation"/>
+    <rdfs:label xml:lang="en-US">has country</rdfs:label>
+    <rdfs:range rdf:resource="http://vivo.brown.edu/ontology/citation#Country"/>
+    <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">40</vitro:displayRankAnnot>
+    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivo.brown.edu/individual/vitroPropertyGroupCitationInformation"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivo.brown.edu/ontology/citation#Publisher">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -261,6 +331,16 @@
     <rdfs:subClassOf rdf:resource="http://vivo.brown.edu/ontology/citation#Citation"/>
     <rdfs:label xml:lang="en-US">Conference Paper</rdfs:label>
   </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/citation#Country">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Country</rdfs:label>
+    <vitro:inClassGroup rdf:resource="http://vivo.brown.edu/individual/vitroClassGroupcitations"/>
+    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayLimitAnnot>
+    <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayRankAnnot>
+    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:hiddenFromPublishBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://vivo.brown.edu/ontology/citation#firstName">
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
@@ -329,6 +409,16 @@
     <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">40</vitro:displayRankAnnot>
     <rdfs:label xml:lang="en-US">isbn</rdfs:label>
   </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/citation#eissn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/citation#Citation"/>
+    <rdfs:label xml:lang="en-US">eissn</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">40</vitro:displayRankAnnot>
+    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:inPropertyGroupAnnot rdf:resource="http://vivo.brown.edu/individual/vitroPropertyGroupCitationInformation"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://vivo.brown.edu/ontology/citation#oclc">
     <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
     <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
@@ -370,6 +460,16 @@
     <rdfs:subClassOf rdf:resource="http://vivo.brown.edu/ontology/citation#Citation"/>
     <vitro:inClassGroup rdf:resource="http://vivo.brown.edu/individual/vitroClassGroupcitations"/>
     <rdfs:label xml:lang="en-US">Book Section</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/citation#Assignee">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Assignee</rdfs:label>
+    <vitro:inClassGroup rdf:resource="http://vivo.brown.edu/individual/vitroClassGroupcitations"/>
+    <vitro:displayLimitAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayLimitAnnot>
+    <vitro:displayRankAnnot rdf:datatype="http://www.w3.org/2001/XMLSchema#int">-1</vitro:displayRankAnnot>
+    <vitro:hiddenFromDisplayBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:hiddenFromPublishBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
+    <vitro:prohibitedFromUpdateBelowRoleLevelAnnot rdf:resource="http://vitro.mannlib.cornell.edu/ns/vitro/role#public"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivo.brown.edu/ontology/citation#citedAs">
     <owl:inverseOf rdf:resource="http://vivo.brown.edu/ontology/citation#cites"/>
