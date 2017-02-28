@@ -1,6 +1,8 @@
 #!flask/bin/python
 from flask import jsonify, make_response
 
+from resources.errors import ValidationError, AliasError, RESTError
+
 
 def index(resource, request):
 	# Working for single strings
