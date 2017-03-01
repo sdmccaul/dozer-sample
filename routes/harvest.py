@@ -1,51 +1,29 @@
 #!flask/bin/python
 from flask import Blueprint, request
 from rest import index, retrieve, create, replace, destroy
-from resources.harvest import PubmedSearch, WosSearch
+from resources.harvest import HarvestProcess
 
 
 harvest = Blueprint('harvest', __name__)
 
-## API for PubMed Search
+## API for Harvest Process
 
-@harvest.route('/harvest/pubmed/', methods=['GET'])
+@harvest.route('/harvest/processes/', methods=['GET'])
 def index_pubmed_queries():
-	return index(PubmedSearch, request)
+	return index(HarvestProcess, request)
 
-@harvest.route('/harvest/pubmed/', methods=['POST'])
+@harvest.route('/harvest/processes/', methods=['POST'])
 def create_pubmed_query():
-	return create(PubmedSearch, request)
+	return create(HarvestProcess, request)
 
-@harvest.route('/harvest/pubmed/<rabid>', methods=['GET'])
+@harvest.route('/harvest/processes/<rabid>', methods=['GET'])
 def retrieve_pubmed_query(rabid):
-	return retrieve(PubmedSearch, rabid)
+	return retrieve(HarvestProcess, rabid)
 
-@harvest.route('/harvest/pubmed/<rabid>', methods=['PUT'])
+@harvest.route('/harvest/processes/<rabid>', methods=['PUT'])
 def replace_pubmed_query(rabid):
-	return replace(PubmedSearch, request, rabid)
+	return replace(HarvestProcess, request, rabid)
 
-@harvest.route('/harvest/pubmed/<rabid>', methods=['DELETE'])
+@harvest.route('/harvest/processes/<rabid>', methods=['DELETE'])
 def destroy_pubmed_query(rabid):
-	return destroy(PubmedSearch, request, rabid)
-
-## API for Web of Science Search
-
-@harvest.route('/harvest/wos/', methods=['GET'])
-def index_wos_queries():
-	return index(WosSearch, request)
-
-@harvest.route('/harvest/wos/', methods=['POST'])
-def create_wos_query():
-	return create(WosSearch, request)
-
-@harvest.route('/harvest/wos/<rabid>', methods=['GET'])
-def retrieve_wos_query(rabid):
-	return retrieve(WosSearch, rabid)
-
-@harvest.route('/harvest/wos/<rabid>', methods=['PUT'])
-def replace_wos_query(rabid):
-	return replace(WosSearch, request, rabid)
-
-@harvest.route('/harvest/wos/<rabid>', methods=['DELETE'])
-def destroy_wos_query(rabid):
-	return destroy(WosSearch, request, rabid)
+	return destroy(HarvestProcess, request, rabid)
