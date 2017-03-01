@@ -37,3 +37,19 @@ HarvestProcess = Collection(
 				namespace='http://vivo.brown.edu/individual/',
 				prefix='harvest')
 HarvestProcess.register_endpoint(spq)
+
+
+harvestSourceSchema = Schema({
+	'class'					: 	Attribute(rdf.rdfType, required=True,
+									always	= [ bharvest.Source ],
+									allowed	= [ bharvest.Source ]),
+	'label'					:	Attribute(rdfs.label, required=True),
+})
+
+HarvestSource = Collection(
+				name='harvest source',
+				schema=harvestSourceSchema,
+				named_graph='http://vivo.brown.edu/data/harvest',
+				namespace='http://vivo.brown.edu/individual/',
+				prefix='harvest')
+HarvestSource.register_endpoint(spq)
