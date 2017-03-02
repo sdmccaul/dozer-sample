@@ -43,7 +43,7 @@ harvestSourceSchema = Schema({
 	'class'					: 	Attribute(rdf.rdfType, required=True,
 									always	= [ bharvest.Source ],
 									allowed	= [ bharvest.Source ]),
-	'label'					:	Attribute(rdfs.label, required=True),
+	'label'					:	Attribute(rdfs.label, required=True)
 })
 
 HarvestSource = Collection(
