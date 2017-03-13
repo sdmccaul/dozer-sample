@@ -1,5 +1,6 @@
 #!flask/bin/python
 from flask import jsonify, make_response
+from cache import etags
 
 from resources.errors import ValidationError, AliasError, RESTError
 
