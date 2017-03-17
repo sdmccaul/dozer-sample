@@ -65,6 +65,12 @@
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en-US">Harvest Source</rdfs:label>
   </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#apiQueryParameters">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#Source"/>
+    <rdfs:label xml:lang="en-US">api parameters</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
   <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#PubMedSearch">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="en-US">PubMed Search</rdfs:label>
@@ -75,6 +81,12 @@
     <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#User"/>
     <rdfs:range rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
     <rdfs:label xml:lang="en-US">user processes</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#queryParameters">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://vivo.brown.edu/ontology/harvest#HarvestProcess"/>
+    <rdfs:label xml:lang="en-US">query parameters</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://vivo.brown.edu/ontology/harvest#hasSource">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>

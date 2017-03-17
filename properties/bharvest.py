@@ -16,9 +16,11 @@ PubMedSearch             =  ns + 'PubMedSearch'
 
 ### Property Declarations ###
 
-query             =  Domain(ns + 'query',             'string')
-status            =  Domain(ns + 'status',            'string')
-hasUser           =  Domain(ns + 'hasUser',           'uri')
-sourceHasProcess  =  Domain(ns + 'sourceHasProcess',  'uri')
-userHasProcess    =  Domain(ns + 'userHasProcess',    'uri')
-hasSource         =  Domain(ns + 'hasSource',         'uri')
+query               =  Domain(ns + 'query',               'string')
+status              =  Domain(ns + 'status',              'string')
+hasUser             =  Domain(ns + 'hasUser',             'uri')
+sourceHasProcess    =  Domain(ns + 'sourceHasProcess',    'uri')
+apiQueryParameters  =  Domain(ns + 'apiQueryParameters',  'string')
+userHasProcess      =  Domain(ns + 'userHasProcess',      'uri')
+queryParameters     =  Domain(ns + 'queryParameters',     'string')
+hasSource           =  Domain(ns + 'hasSource',           'uri')

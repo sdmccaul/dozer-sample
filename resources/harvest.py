@@ -27,7 +27,8 @@ harvestProcessSchema = Schema({
 	'user'					:	Attribute(bharvest.hasUser, required=True),
 	'source'				:	Attribute(bharvest.hasSource, required=True),
 	'status'				:	Attribute(bharvest.status, optional=True),
-	'query'					:	Attribute(bharvest.query, optional=True)
+	'query'					:	Attribute(bharvest.query, optional=True),
+	'parameters'			:	Attribute(bharvest.queryParameters, optional=True)
 })
 
 HarvestProcess = Collection(
@@ -43,7 +44,8 @@ harvestSourceSchema = Schema({
 	'class'					: 	Attribute(rdf.rdfType, required=True,
 									always	= [ bharvest.Source ],
 									allowed	= [ bharvest.Source ]),
-	'label'					:	Attribute(rdfs.label, required=True)
+	'label'					:	Attribute(rdfs.label, required=True),
+	'parameters'			:	Attribute(bharvest.apiQueryParameters, optional=True)
 })
 
 HarvestSource = Collection(
