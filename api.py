@@ -13,10 +13,12 @@ os.environ['UPDATE_PASS'] = app.config['UPDATE_PASS']
 from routes.fisfeed import fisfeed
 from routes.citations import citations
 from routes.harvest import harvest
+from routes.vocab import vocab
 
 app.register_blueprint(fisfeed)
 app.register_blueprint(citations)
 app.register_blueprint(harvest)
+app.register_blueprint(vocab)
 
 from resources.errors import ValidationError, AliasError, RESTError
 
